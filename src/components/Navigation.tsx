@@ -12,7 +12,13 @@ export const Navigation = () => {
             component={Link}
             to="/"
             variant={location.pathname === '/' ? 'contained' : 'text'}
-            sx={{ color: 'white' }}
+            sx={{ 
+              color: 'white',
+              '&:hover': {
+                color: 'white',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)'
+              }
+            }}
           >
             Couleur Unique
           </Button>
@@ -20,7 +26,13 @@ export const Navigation = () => {
             component={Link}
             to="/gradient"
             variant={location.pathname === '/gradient' ? 'contained' : 'text'}
-            sx={{ color: 'white' }}
+            sx={{ 
+              color: 'white',
+              '&:hover': {
+                color: 'white',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)'
+              }
+            }}
           >
             Dégradés
           </Button>

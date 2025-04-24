@@ -121,14 +121,14 @@ export function GradientPage() {
               type="color"
               value={startColor}
               onChange={(e) => setStartColor(e.target.value)}
-              label="Couleur de début"
+              label=""
               sx={{ width: '120px' }}
             />
             <StyledTextField
               type="color"
               value={endColor}
               onChange={(e) => setEndColor(e.target.value)}
-              label="Couleur de fin"
+              label=""
               sx={{ width: '120px' }}
             />
             <GenerateButton 
