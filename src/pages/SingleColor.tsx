@@ -223,7 +223,7 @@ export function SingleColorPage() {
 
         <Grid container spacing={2}>
           {palettes.map((palette: string[], paletteIndex: number) => (
-            <Grid item xs={12} key={paletteIndex}>
+            <div key={paletteIndex}>
               <PaletteContainer>
                 {palette.map((color, colorIndex) => (
                   <ColorBox
@@ -246,7 +246,7 @@ export function SingleColorPage() {
                   </ColorBox>
                 ))}
               </PaletteContainer>
-            </Grid>
+            </div>
           ))}
         </Grid>
       </MainContent>

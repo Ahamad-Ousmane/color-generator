@@ -16,7 +16,7 @@ const AppContainer = styled(Box)(() => ({
 
 function App() {
   return (
-    <BrowserRouter basename="/color-generator">
+    <BrowserRouter>
       <AppContainer>
         <Navigation />
         <Routes>

@@ -142,7 +142,7 @@ export function GradientPage() {
 
         <Grid container spacing={3}>
           {palettes.map((palette: string[], index: number) => (
-            <Grid item xs={12} key={index}>
+            <div key={index}>
               <Paper
                 sx={{
                   p: 2,
@@ -175,7 +175,7 @@ export function GradientPage() {
                 </Alert>}
                 Cliquez pour copier le CSS
               </Paper>
-            </Grid>
+            </div>
           ))}
         </Grid>
       </MainContent>
