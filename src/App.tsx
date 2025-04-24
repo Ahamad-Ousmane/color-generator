@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
@@ -8,7 +7,7 @@ import { Navigation } from './components/Navigation'
 import { SingleColorPage } from './pages/SingleColor'
 import { GradientPage } from './pages/Gradient'
 
-const AppContainer = styled(Box)(({ theme }) => ({
+const AppContainer = styled(Box)(() => ({
   minHeight: '100vh',
   width: '100%',
   background: 'linear-gradient(135deg, #1a3a8f 0%, #21a3a3 100%)',

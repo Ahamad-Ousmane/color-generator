@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Box, Typography, TextField, Button, Grid as MuiGrid, Paper, Alert } from '@mui/material';
+import { useState } from 'react';
+import { Box, Typography, TextField, Button, Grid, Paper, Alert } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import chroma from 'chroma-js';
 
@@ -27,27 +27,7 @@ const MainContent = styled(Box)(({ theme }) => ({
   },
 }));
 
-const ColorBox = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(2),
-  textAlign: 'center',
-  height: '100px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  cursor: 'pointer',
-  transition: 'all 0.2s ease-in-out',
-  position: 'relative',
-  flex: '1 1 150px',
-  maxWidth: '200px',
-  borderRadius: '12px',
-  boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
-  '&:hover': {
-    transform: 'translateY(-5px)',
-    boxShadow: '0 12px 20px rgba(0,0,0,0.15)',
-  },
-}));
-
-const StyledTextField = styled(TextField)(({ theme }) => ({
+const StyledTextField = styled(TextField)(() => ({
   '& .MuiOutlinedInput-root': {
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     borderRadius: '30px',
@@ -58,7 +38,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   },
 }));
 
-const GenerateButton = styled(Button)(({ theme }) => ({
+const GenerateButton = styled(Button)(() => ({
   borderRadius: '30px',
   padding: '12px 32px',
   fontSize: '1.1rem',
@@ -71,7 +51,7 @@ const GenerateButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-export const GradientPage = () => {
+export function GradientPage() {
   const [startColor, setStartColor] = useState('#845EC2');
   const [endColor, setEndColor] = useState('#2196F3');
   const [palettes, setPalettes] = useState<string[][]>([]);
@@ -160,9 +140,9 @@ export const GradientPage = () => {
           </Box>
         </Box>
 
-        <MuiGrid container spacing={3}>
-          {palettes.map((palette, index) => (
-            <MuiGrid item xs={12} key={index}>
+        <Grid container spacing={3}>
+          {palettes.map((palette: string[], index: number) => (
+            <Grid item xs={12} key={index}>
               <Paper
                 sx={{
                   p: 2,
@@ -195,10 +175,10 @@ export const GradientPage = () => {
                 </Alert>}
                 Cliquez pour copier le CSS
               </Paper>
-            </MuiGrid>
+            </Grid>
           ))}
-        </MuiGrid>
+        </Grid>
       </MainContent>
     </AppWrapper>
   );
-};
+}

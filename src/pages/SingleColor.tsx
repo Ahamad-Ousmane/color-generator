@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Box, Typography, TextField, Button, Grid as MuiGrid, Paper, Alert } from '@mui/material'
+import { useState } from 'react'
+import { Box, Typography, TextField, Button, Grid, Paper, Alert } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import chroma from 'chroma-js'
 
@@ -94,7 +94,7 @@ const PaletteContainer = styled(Box)(({ theme }) => ({
   },
 }))
 
-const StyledTextField = styled(TextField)(({ theme }) => ({
+const StyledTextField = styled(TextField)(() => ({
   '& .MuiOutlinedInput-root': {
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     borderRadius: '30px',
@@ -105,7 +105,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   },
 }))
 
-const GenerateButton = styled(Button)(({ theme }) => ({
+const GenerateButton = styled(Button)(() => ({
   borderRadius: '30px',
   padding: '12px 32px',
   fontSize: '1.1rem',
@@ -221,9 +221,9 @@ export function SingleColorPage() {
           </Box>
         </HeroSection>
 
-        <MuiGrid container spacing={3}>
-          {palettes.map((palette, paletteIndex) => (
-            <MuiGrid item xs={12} key={paletteIndex}>
+        <Grid container spacing={2}>
+          {palettes.map((palette: string[], paletteIndex: number) => (
+            <Grid item xs={12} key={paletteIndex}>
               <PaletteContainer>
                 {palette.map((color, colorIndex) => (
                   <ColorBox
@@ -246,9 +246,9 @@ export function SingleColorPage() {
                   </ColorBox>
                 ))}
               </PaletteContainer>
-            </MuiGrid>
+            </Grid>
           ))}
-        </MuiGrid>
+        </Grid>
       </MainContent>
     </AppWrapper>
   )
